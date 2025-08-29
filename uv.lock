@@ -221,7 +221,7 @@ wheels = [
 ]
 
 [[package]]
-name = "pycon-lt-demo"
+name = "pycon-demo"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

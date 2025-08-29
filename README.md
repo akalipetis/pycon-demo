@@ -1,6 +1,6 @@
-# PyCon LT Demo
+# PyCon Demo
 
-This is the repository for the code demonstrated during PyCon LT.
+This is the repository for the code demonstrated during PyCon.
 
 ## How to demo this application
 
