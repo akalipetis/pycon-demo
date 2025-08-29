@@ -11,10 +11,10 @@ uvicorn:
 	uv run uvicorn pycon:app.asgi --interface asgi3 --port "$(PORT)"
 
 migrate:
-	uv run nanodjango migrate
+	uv run nanodjango manage pycon.py migrate
 
 collectstatic:
-	uv run nanodjango collectstatic
+	uv run nanodjango manage pycon.py collectstatic -- --no-input
 
 dev:
 	uv run nanodjango run pycon.py
