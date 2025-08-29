@@ -5,10 +5,10 @@ LOAD_DURATION = 5s
 PORT = 8000
 
 gunicorn:
-	uv run gunicorn -w 4 --bind 127.0.0.1:$(PORT) pyconlt:app
+	uv run gunicorn -w 4 --bind 127.0.0.1:$(PORT) pycon:app
 
 uvicorn:
-	uv run uvicorn pyconlt:app.asgi --interface asgi3 --port "$(PORT)"
+	uv run uvicorn pycon:app.asgi --interface asgi3 --port "$(PORT)"
 
 migrate:
 	uv run nanodjango migrate
@@ -17,7 +17,7 @@ collectstatic:
 	uv run nanodjango collectstatic
 
 dev:
-	uv run nanodjango run pyconlt.py
+	uv run nanodjango run pycon.py
 
 loadtest:
 	echo "GET $(LOAD_HOST)api/" | vegeta attack -duration=$(LOAD_DURATION) -max-workers=$(LOAD_CONCURRENCY) | tee $(LOAD_HOST_MD5).bin | vegeta report

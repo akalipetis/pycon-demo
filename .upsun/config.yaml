@@ -1,6 +1,6 @@
 # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference/single-runtime-image.html
 applications:
-  pycon-lt-demo:
+  pycon-demo:
     # Application source code directory
     source:
       root: "/"
@@ -36,7 +36,7 @@ applications:
       commands:
         # The command to launch your app. If it terminates, it’s restarted immediately.
         # You can use the $PORT or the $SOCKET environment variable depending on the socket family of your upstream
-        start: uv run gunicorn -w 4 pyconlt:app
+        start: uv run gunicorn -w 4 pycon:app
       # You can listen to a UNIX socket (unix) or a TCP port (tcp, default).
       # Whether your app should speak to the webserver via TCP or Unix socket. Defaults to tcp
       # More information: https://docs.upsun.com/create-apps/app-reference/single-runtime-image.html#where-to-listen
@@ -95,12 +95,12 @@ applications:
       build: |
         set -eux
         UV_NO_CACHE=false uv sync --no-dev
-        uv run nanodjango manage pyconlt.py collectstatic -- --noinput
+        uv run nanodjango manage pycon.py collectstatic -- --noinput
 
       deploy: |
         set -eux
-        uv run nanodjango manage pyconlt.py migrate
-        uv run nanodjango manage pyconlt.py loaddata fixtures/talks.json fixtures/conferences.json
+        uv run nanodjango manage pycon.py migrate
+        uv run nanodjango manage pycon.py loaddata fixtures/talks.json fixtures/conferences.json
 
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
@@ -134,7 +134,7 @@ services:
 routes:
   "https://{default}/":
     type: upstream
-    upstream: "pycon-lt-demo:http"
+    upstream: "pycon-demo:http"
   # A basic redirect definition
   # More information: https://docs.upsun.com/define-routes.html#basic-redirect-definition
   "https://www.{default}":

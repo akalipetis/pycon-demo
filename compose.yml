@@ -1,9 +1,9 @@
 services:
   db:
     image: postgres:latest
-    container_name: pycon_lt_demo_db
+    container_name: pycon_demo_db
     environment:
-      POSTGRES_DB: pycon_lt_demo
+      POSTGRES_DB: pycon_demo
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
