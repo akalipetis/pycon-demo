@@ -6,7 +6,7 @@ import sec
 from django.db import models
 from nanodjango import Django
 
-logger = logging.getLogger("pyconlt")
+logger = logging.getLogger("pycon")
 
 
 app = Django(
@@ -25,7 +25,7 @@ app = Django(
             "level": "WARNING",
         },
         "loggers": {
-            "pyconlt": {
+            "pycon": {
                 "handlers": ["console"],
                 "level": "DEBUG",
                 "propagate": False,
@@ -35,7 +35,7 @@ app = Django(
     DATABASES={
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": sec.load("POSTGRESQL_PATH", "pycon_lt_demo"),
+            "NAME": sec.load("POSTGRESQL_PATH", "pycon_demo"),
             "USER": sec.load("POSTGRESQL_USERNAME", "postgres"),
             "PASSWORD": sec.load("POSTGRESQL_PASSWORD", "postgres"),
             "HOST": sec.load("POSTGRESQL_HOST", "localhost"),

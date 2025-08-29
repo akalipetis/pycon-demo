@@ -1,6 +1,6 @@
 [
     {
-        "model": "pyconlt.talk",
+        "model": "pycon.talk",
         "pk": 1,
         "fields": {
             "title": "Python Containers: Best Practices",
@@ -9,7 +9,7 @@
         }
     },
     {
-        "model": "pyconlt.talk",
+        "model": "pycon.talk",
         "pk": 2,
         "fields": {
             "title": "I want to deploy my Flask app on Kubernetes, what are my options?",
@@ -18,7 +18,7 @@
         }
     },
     {
-        "model": "pyconlt.talk",
+        "model": "pycon.talk",
         "pk": 3,
         "fields": {
             "title": "Coding Aesthetics: PEP 8, Existing Conventions, and Beyond",
@@ -27,7 +27,7 @@
         }
     },
     {
-        "model": "pyconlt.talk",
+        "model": "pycon.talk",
         "pk": 4,
         "fields": {
             "title": "Sync or async? Feel the magic of coroutines and the event loop in Django",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "pyconlt.talk",
+        "model": "pycon.talk",
         "pk": 5,
         "fields": {
             "title": "Architecture as Code (AaC) with Python",
