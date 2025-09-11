@@ -1,15 +1,12 @@
 services:
-  db:
-    image: postgres:latest
-    container_name: pycon_demo_db
-    environment:
-      POSTGRES_DB: pycon_demo
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"
+  web:
+    build: .
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - .:/usr/src/app
+      - uv:/opt/uv/venv
+    command: uvicorn app.main:app --host
+    ports:
+      - ${WEB_PORT:-8000}:8000
 
 volumes:
-  db_data:
+  uv:
